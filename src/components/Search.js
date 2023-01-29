@@ -8,15 +8,23 @@ function Search({setLocation, setweatherData, weatherData, location, celsius}) {
 
     const getWeather = function(e) {
         e.preventDefault()
+
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${celsius ? 'metric' : 'imperial'}&APPID=APIKEYGOESHERE`)
+
         if (location) {
         axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${celsius ? 'metric' : 'imperial'}&APPID=YOURAPIKEYHERE`)
+
         .then(res => setweatherData(res.data))
         .catch(e => console.log(e))}
         
     }
     
     useEffect(() => {
+
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${celsius ? 'metric' : 'imperial'}&APPID=APIKEYGOESHERE`)
+
         axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${celsius ? 'metric' : 'imperial'}&APPID=YOURAPIKEYHERE`)
+
         .then(res => setweatherData(res.data))
       }, [celsius])
 
