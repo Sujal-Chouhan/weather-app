@@ -1,18 +1,24 @@
 import React, {useEffect, useState} from 'react';
 
 function WeatherDisplay({weatherData, celsius}) {
+
+    // logic for converting from UTC time to local time depending on location
     const [date, setDate] = useState(new Date(new Date().getTime() + weatherData.timezone * 1000))
 
+    // logic for updating background image and time when weatherData updates
     useEffect(() => {
         const offset = weatherData.timezone
         const newDate = new Date(new Date().getTime() + offset * 1000)
         setDate(newDate);
         let body = document.querySelector('body');
-        body.classList.remove('clear-sky', 'cloudy', 'rainy', 'snow', 'clouds', 'clear', 'rain');
+        body.classList.remove('clear-sky', 'cloudy', 'rainy', 'snow', 'clouds', 'clear', 'rain', 'default');
         if (weatherData.weather) {
             if ( ['clear', 'cloudy', 'rainy', 'snow', 'clouds', 'clear-sky', 'rain'].includes(weatherData.weather[0].main.toLowerCase())) {
                 body.classList.add(weatherData.weather[0].main.toLowerCase())
-        }}
+            } else {
+                body.classList.add('default')
+            }
+        }
 
     }, [weatherData])
 

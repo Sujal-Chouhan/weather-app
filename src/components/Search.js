@@ -5,26 +5,24 @@ import axios from 'axios';
 
 
 function Search({setLocation, setweatherData, weatherData, location, celsius}) {
-
+    
+    // fetches weatherData, is called on submit
     const getWeather = function(e) {
         e.preventDefault()
 
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${celsius ? 'metric' : 'imperial'}&APPID=APIKEYGOESHERE`)
-
         if (location) {
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${celsius ? 'metric' : 'imperial'}&APPID=YOURAPIKEYHERE`)
-
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${celsius ? 'metric' : 'imperial'}&APPID=ab49a07d1c20afb12d14ebeeda79c2be
+        `)
         .then(res => setweatherData(res.data))
         .catch(e => console.log(e))}
         
     }
-    
+
+    // Refetches weatherData when button is clicked to switch between Celsius and Fahrenheiht
     useEffect(() => {
 
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${celsius ? 'metric' : 'imperial'}&APPID=APIKEYGOESHERE`)
-
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${celsius ? 'metric' : 'imperial'}&APPID=YOURAPIKEYHERE`)
-
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${celsius ? 'metric' : 'imperial'}&APPID=ab49a07d1c20afb12d14ebeeda79c2be
+        `)
         .then(res => setweatherData(res.data))
       }, [celsius])
 

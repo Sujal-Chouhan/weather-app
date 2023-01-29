@@ -11,6 +11,10 @@ body {
   align-items: center;
 }
 
+.default {
+  background-image: url(./assets/default.jpg);
+}
+
 .clear-sky {
   background-image: url(./assets/clearSky.jpg);
 }
@@ -27,7 +31,7 @@ body {
 }
 
 .rain {
-  background-image: url(./assets/osman-rana-GXEZuWo5m4I-unsplash.jpg);
+  background-image: url(./assets/rain.jpg);
 }
 
 code {
