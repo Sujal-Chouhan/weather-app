@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <Search setLocation={setLocation} location={location} celsius={celsius} setweatherData={setweatherData} />
+      <Search setLocation={setLocation} location={location} celsius={celsius} setweatherData={setweatherData} weatherData={weatherData} />
       <WeatherDisplay weatherData={weatherData} celsius={celsius} />
       <SelectUnit celsius={celsius} setCelsius={setCelsius} />
     </div>
