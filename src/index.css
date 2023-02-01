@@ -176,7 +176,7 @@ input:checked + .slider:before {
 
 .input {
   max-width: 190px;
-  height: 44px;
+  height: 2.7rem;
   background-color: #05060f0a;
   border-radius: .5rem;
   padding: 0 1rem;
