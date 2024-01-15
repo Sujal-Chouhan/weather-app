@@ -13,10 +13,10 @@ View the temperature in either Celsius or Fahrenheit.
 Clean and user-friendly interface.
 
 # Technologies and Tools
-React
-JavaScript
-HTML
-CSS
+- React
+- JavaScript
+- HTML
+- CSS
 
 # API Used
 The weather data displayed in the app is obtained from OpenWeatherMap's REST API. This API provides up-to-date weather information for any location in the world.
